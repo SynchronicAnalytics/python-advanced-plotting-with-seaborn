@@ -119,12 +119,12 @@ titanic_filtered.describe()['age']
 
 titanic_filtered.groupby('survived').describe()['age']
 
-# Check is age is normally-distributed
+# Check if age is normally-distributed
 # It is probably close enough, given the sample size, and the type of data (i.e. social science)
 
 z = (titanic_filtered['age'] - titanic_filtered['age'].mean()) / titanic_filtered['age'].std()
 
-stats.probplot(titanic_filtered['z'],dist="norm",plot=plt)
+stats.probplot(z,dist="norm",plot=plt)
 plt.show()
 
 # Run the test
